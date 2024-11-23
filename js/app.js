@@ -60,10 +60,10 @@ fetch(`https://docs.google.com/spreadsheets/d/${CONFIG.sheetId}/gviz/tq?tqx=out:
                 }
             });
 
-            // Add "All Categories" button
+            // Add all button
             const allButton = document.createElement('button');
             allButton.className = 'category-btn active';
-            allButton.textContent = 'All Categories';
+            allButton.textContent = 'Todas';
             allButton.onclick = () => {
                 selectedCategories.clear();
                 updateCategoryButtons();
@@ -121,7 +121,7 @@ function toggleCategory(category) {
 function updateCategoryButtons() {
     const buttons = document.querySelectorAll('.category-btn');
     buttons.forEach(button => {
-        if (button.textContent === 'All Categories') {
+        if (button.textContent === 'Todas') {
             button.classList.toggle('active', selectedCategories.size === 0);
         } else {
             button.classList.toggle('active', selectedCategories.has(button.textContent));
