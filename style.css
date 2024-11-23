@@ -40,12 +40,39 @@ h1 {
     box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
 }
 
+/* Image container */
+.image-container {
+    position: relative;
+    display: inline-block;
+}
+
 /* Item image */
-.item-card img {
+.image-container img {
     max-width: 100%;
     height: auto;
     border-radius: 4px;
     margin-bottom: 10px;
+}
+
+/* Navigation buttons */
+.prev-btn, .next-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 50%;
+}
+
+.prev-btn {
+    left: 10px;
+}
+
+.next-btn {
+    right: 10px;
 }
 
 /* Item title */
