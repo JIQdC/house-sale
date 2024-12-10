@@ -25,14 +25,14 @@ fetch(`https://docs.google.com/spreadsheets/d/${CONFIG.sheetId}/gviz/tq?tqx=out:
                 const published = row.c[6]?.v;
                 const category = row.c[7]?.v;
 
-                // Add categories to the set
-                if (category) {
-                    category.split(',').forEach(cat => categories.add(cat.trim()));
-                }
-
+                
                 const contactUrl = `${CONFIG.googleFormBaseUrl}${encodeURIComponent(itemName)}`;
-
+                
                 if (published) {
+                    // Add categories to the set
+                    if (category) {
+                        category.split(',').forEach(cat => categories.add(cat.trim()));
+                    }
                     const itemCard = document.createElement('div');
                     itemCard.className = 'item-card';
                     itemCard.setAttribute('data-category', category); // Add data-category attribute
